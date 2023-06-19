@@ -29,11 +29,12 @@ import joblib,os
 import pandas as pd
 
 # Vectorizer
-news_vectorizer = "resources/tfidfvect.pkl"
-tweet_cv = joblib.load(open(news_vectorizer, "rb")) # loading your vectorizer from the pkl file
+news_vectorizer_path = os.path.join("resources", "tfidfvect.pkl")
+tweet_cv = joblib.load(open(news_vectorizer_path, "rb")) # loading your vectorizer from the pkl file
 
 # Load your raw data
-raw = pd.read_csv("resources/train.csv")
+raw_data_path = os.path.join("resources", "train.csv")
+raw = pd.read_csv(raw_data_path)
 
 # The main function where we will build the actual app
 def main():
